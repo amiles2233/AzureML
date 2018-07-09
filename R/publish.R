@@ -113,7 +113,7 @@ publishWebService <- function(ws, fun, name,
     `data.frame` <- TRUE
   }
   if(`data.frame`) {
-    function_output <- match.fun(fun)(head(inputSchema))
+    function_output <- match.fun(fun)(inputSchema)
     inputSchema <- azureSchema(inputSchema)
     if(missing(outputSchema)) {
       if(is.data.frame(function_output) || is.list(function_output)) {
